@@ -1,0 +1,23 @@
+{
+  "raga": "mohanam",
+  "swaras": {
+    "s":"C","r":"D","g":"E","p":"G","d":"A",
+    "s'":"C6","r'":"D6","g'":"E6","p'":"G6","d'":"A6",
+    "s,":"C4","r,":"D4","g,":"E4","p,":"G4","d,":"A4"
+  },
+  "songs": [
+    [
+    "g g p - p - d p s' - s' - r' s' d d p - d p g g r - ",
+    "g p d s' d - d p g g r - g g d p g - p g g r s - ",
+    "g g g g r g p g p - p - g g d p d - p d s' - s' - ",
+    "d g' r' r' s' s' d s' d d d p g p d s' d p d p g g r s ",
+    "s g g - g - g r p g r - s r s g r g s r d, - s - ",
+    "g - g - g r r - s s r r g g r r s r g r s r s d, s r g p g r s r ",
+    "g p g g r s r g r r s d, s r g r g p g p d p d s' d - p g d p g r ",
+    "g - g - p - - - g g p p d d p - d s' d d p g d p d g d p g r s r ",
+    "g g p p d p d s' d s' r' s' g' r' - s' d s' r' s' - d p d s' d - p g r s r ",
+    "g - r g r s r - s r s g r g s r s d, s r g r g p g p d - p - - - ",
+    "g p d p d s' r' g' r' - g' s' - r' d - s' p - d s' r' g' s' - d p - g r s r "
+    ]
+    ]
+}

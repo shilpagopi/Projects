@@ -1,0 +1,20 @@
+{
+  "raga": "shudhadhanyasi",
+  "swaras": {
+    "s":"C","g":"D#","m":"F","p":"G","n":"B",
+    "s'":"C6","g'":"D#6","m'":"F6","p'":"G6","n'":"B6",
+    "s,":"C4","g,":"D#4","m,":"F4","p,":"G4","n,":"B4"
+  },
+  "songs": [
+    [
+      "p - p - m g s - p m g s s n, s - g g s m m g p m n n p m g s g m ",
+      "g m p s g m p n p p m m g g s - g g s m m g g m g s n, p, n, s g m ",
+      "p - n - s' n p m p m g g m p - - - g m p n p n s' s' n n p m g s g m ",
+      "p n p n - s' p n s' g' - g' s' n p m p n s' g' m' m' g' s' s' n p n p m g m ",
+      "p p n p n p m p n n p m p m g m g m p s g m p n p p m g m - - - ",
+      "g m p s - s m g m p m g - m p n n, s g m p n p m g m p n s' - - - ",
+      "n n s' p p n m m p g m p n - p m g g m p n m p n s' p n s' g' - - m' ",
+      "g' s' n p n s' g' m' p n s' g' m' m' g' g' s' s' - n p m p p - m g s n, s g m "
+    ]
+    ]
+}
