@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>AI Music Composer</title>
+    </head>
+	<style>
+	.header {
+	  padding: 20px;
+	  padding-left: 60px;
+	  padding-right: 60px;
+	  text-align: center;
+	  background: #1abc9c;
+	  color: white;
+	  font-size: 30px;
+	}
+	
+	.title {
+	  padding-left: 100px;
+	 }
+	
+	.button {
+	  padding: 5px 15px;
+	  margin-left:100px;
+	  font-size: 24px;
+	  text-align: center;
+	  cursor: pointer;
+	  outline: none;
+	  color: #fff;
+	  background-color: #1abc9c;
+	  border: none;
+	  border-radius: 15px;
+	  box-shadow: 0 4px #999;
+	}
+
+	.button:hover {background-color: #3e8e41}
+
+	.button:active {
+	  background-color: #1abc9c;
+	  box-shadow: 0 5px #666;
+	  transform: translateY(4px);
+	}
+	</style>
+
+    <body>  
+	    <button class="header">AI Music Composer</button>	
+        <h2 style="color:green" class="title"> Create Your Music </h2>
+		<form action="/" method="post">
+			<table>
+				{% csrf_token %}
+				{{ form.as_table }}
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			<td><input type="Submit" value="Play My Tune" class="button"></td>
+		</form>
+    </body>
+</html>
