@@ -1,15 +1,28 @@
-import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class Raga {
 	static List<String> songs = new ArrayList();
 	static HashMap<String, String> swaras = new HashMap<String, String>();
+
+	enum RagaName{
+		ABHOGI,MOHANAM,SHUDHADHANYASI;
+	}
+
+	static String identifyRaga(String raganame){
+		for (RagaName r:RagaName.values()){
+			if (raganame.equalsIgnoreCase(r.toString()))
+				return r.toString().toLowerCase();
+		}
+		return RagaName.ABHOGI.toString().toLowerCase();
+	}
 
 	public static void loadRaga(String raganame) {
 		JSONObject ragaObject = readJson(raganame+".json");

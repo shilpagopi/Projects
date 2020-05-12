@@ -1,25 +1,31 @@
-import java.util.HashMap;
-import java.util.Map.Entry;
-
 import org.jfugue.pattern.Pattern;
 import org.jfugue.player.Player;
 import org.jfugue.rhythm.Rhythm;
-import org.jfugue.theory.ChordProgression;
+
+import java.util.HashMap;
 
 public class MainPlay {
 	static HashMap<Integer, String> rests = new HashMap<Integer, String>();
     static String lastnote = "s";
+    static String raganame = Raga.RagaName.ABHOGI.toString().toLowerCase();
+    static int duration = 32;
+    static String instrument = Instrument.SITAR.toString().toUpperCase();
+    static enum Instrument{
+    	PICCOLO,VIOLIN,GUITAR,ACCORDIAN,SITAR;
+	}
 
 	public static void main(String[] args) {
+		if(args.length==3) {
+			raganame = Raga.identifyRaga(args[0]);
+			duration = Integer.parseInt(args[1]);
+			instrument = identifyInstrument(args[2]);
+		}
+
 		setRests();
 		Player player = new Player();
-        String raganame = "abhogi";
-        int duration = 16;
-		Raga.loadRaga(raganame);
+        Raga.loadRaga(raganame);
 		String song = Raga.getSong();
 
-		//Raga.setSwaras(raganame);
-		//String song = Raga.getSong(raganame);
 		ProbabilityTree.setP1(song);
 		//ProbabilityTree.printP1();
 		//player.play("V0 I[PICCOLO] "+translate(generateSong("g")));
@@ -34,9 +40,11 @@ public class MainPlay {
         .addLayer("````````````````")
         .addLayer("...............+");
 		//player.play(new Pattern(translate(song)),rhythm.getPattern().repeat(4));
-		
+
+		player.play(new Pattern("I["+instrument+"] "+translate(generateSong(lastnote,duration))),rhythm.getPattern().repeat(duration/16));
+
 		//player.play(new Pattern("I[PICCOLO] "+translate(generateSong("g"))),rhythm.getPattern().repeat(4));	
-		player.play(new Pattern("I[SITAR] "+translate(generateSong(lastnote,duration))),rhythm.getPattern().repeat(duration/16));
+		//player.play(new Pattern("I[SITAR] "+translate(generateSong(lastnote,duration))),rhythm.getPattern().repeat(duration/16));
 		//player.play("C D E -");
 		// player.play("Eq Fq Eq Dq Cq Cq G4q Cq Dq Eh -");
 		// player.play("Eq Fq Eq Dq Cq Cq Gq Gq Aq Gh -");
@@ -100,5 +108,13 @@ public class MainPlay {
 		 rests.put(1, "q"); 
 		 rests.put(2, "q Ri");
 		 rests.put(3, "h");
+	}
+
+	static String identifyInstrument(String name){
+		for (Instrument i: Instrument.values()){
+			if (name.equalsIgnoreCase(i.toString()))
+				return i.toString().toUpperCase();
+		}
+		return Instrument.SITAR.toString().toUpperCase();
 	}
 }
